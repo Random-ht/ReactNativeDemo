@@ -1,0 +1,18 @@
+[
+    {
+        "content": "待付款",
+        "icon": "mine_daifukuan"
+    },
+    {
+        "content": "待使用",
+        "icon": "mine_daishiyong"
+    },
+    {
+        "content": "待评价",
+        "icon": "mine_daipinglun"
+    },
+    {
+        "content": "退款/售后",
+        "icon": "mine_tuikuan"
+    }
+]
