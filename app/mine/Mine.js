@@ -10,12 +10,26 @@ import {
 } from 'react-native';
 
 import MineItemsCell from '../cell/MineItemsCell';
+import UserInfo from './UserInfo';
+
+
 var MiddleView = require('../assets/MiddleView.json');
 var Dimensions = require('Dimensions');
 
 var { width, height } = Dimensions.get('window');
 
 export default class Mine extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    //点击蓝色背景进入用户个人信息界面
+    toUserInfo(){
+        this.props.navigator.push({
+            component:UserInfo
+        })
+    }
 
     //leftTitle 左边的文字  leftImage左边的图片 
     getItems(leftTitle, leftImage, rightTitle, rightImage, toRightImage, marginTop) {
@@ -53,12 +67,14 @@ export default class Mine extends Component {
         return (
             <View style={styles.topView}>
                 {/* 上 */}
-                <View style={styles.topViewHeadContainer}>
-                    <Image style={styles.topImage} source={{ uri: 'logo' }}></Image>
-                    <Text style={{ color: 'white' }}>涛哥哥哥</Text>
-                    <Image source={{ uri: 'vip' }} style={{ width: 20, height: 20, marginLeft: 10 }}></Image>
-                    <Image source={{ uri: 'to_right_white' }} style={styles.topToRight}></Image>
-                </View>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => {this.toUserInfo() }}>
+                    <View style={styles.topViewHeadContainer}>
+                        <Image style={styles.topImage} source={{ uri: 'logo' }}></Image>
+                        <Text style={{ color: 'white' }}>涛哥哥哥</Text>
+                        <Image source={{ uri: 'vip' }} style={{ width: 20, height: 20, marginLeft: 10 }}></Image>
+                        <Image source={{ uri: 'to_right_white' }} style={styles.topToRight}></Image>
+                    </View>
+                </TouchableOpacity>
                 {/* 下 */}
                 <View style={styles.topBottomContainer}>
                     {this.getRowItems()}

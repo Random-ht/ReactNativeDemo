@@ -13,7 +13,7 @@ export default class MoreItemsCell extends Component {
 
     render() {
         return (
-            <TouchableOpacity activeOpacity={0.5} onPress={() => this._onPress(this.props)}>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => this._onPress(this.props.title)}>
                 <View style={[styles.container, { marginTop: this.props.marginTop }]}>
                     {/* 左边 */}
                     <Text style={styles.titleStyle}>{this.props.title}</Text>
@@ -24,8 +24,11 @@ export default class MoreItemsCell extends Component {
         )
     }
 
-    _onPress(props) {
-        alert(props.title);
+    _onPress(title) {
+        alert(title);
+        if(title=='头像'){
+            this.props.itemOnClick(title);
+        }
     }
 
     getRightView() {

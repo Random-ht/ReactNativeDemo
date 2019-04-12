@@ -22,15 +22,12 @@ export default class BarCell extends Component {
                 <Text style={styles.textStyle}>{this.props.title}</Text>
                 {/* 右边 */}
                 {this.getRightView()}
-                {/* <TouchableOpacity activeOpacity={0.5} onPress={() => { this.toSetting('设置') }}>
-                    <Image style={styles.rightImageStyle} source={{ uri: this.props.rightImage }}></Image>
-                </TouchableOpacity> */}
             </View>
         )
     }
 
-    toSetting(content) {
-        this.props.toSetting(content);
+    rightImageClick() {
+        this.props.rightImageClick();
     }
 
     //获取Title左边的控件
@@ -43,7 +40,7 @@ export default class BarCell extends Component {
         )
     }
 
-    toBack(){
+    toBack() {
         this.props.toBack();
     }
 
@@ -51,7 +48,7 @@ export default class BarCell extends Component {
     getRightView() {
         return (
             this.props.rightImage.length === 0 ? <View style={styles.rightImageStyle}></View> :
-                <TouchableOpacity activeOpacity={0.5} onPress={() => { this.toSetting('设置') }}>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => { this.rightImageClick() }}>
                     <Image style={styles.rightImageStyle} source={{ uri: this.props.rightImage }}></Image>
                 </TouchableOpacity>
         )

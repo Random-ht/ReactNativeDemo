@@ -14,7 +14,7 @@ export default class More extends Component {
                     title='更多'
                     leftImage=''
                     rightImage='setting'
-                    toSetting={(content) => this.toSetting(content)} />
+                    rightImageClick={() => this.rightImageClick()} />
 
                 <ScrollView style={styles.container}>
                     <MoreItemsCell
@@ -99,10 +99,10 @@ export default class More extends Component {
         )
     }
 
-    toSetting(content) {
+    rightImageClick() {
         this.props.navigator.push({
             component: Setting,
-            props: { 'content': content }
+            props: { 'content': '设置' }
         })
     }
 }

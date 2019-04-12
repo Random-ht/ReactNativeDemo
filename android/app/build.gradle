@@ -146,6 +146,8 @@ android {
 }
 
 dependencies {
+    // implementation project(':react-native-camera')
+    
     implementation project(':react-native-splash-screen')
     implementation project(':react-native-webview')
     implementation fileTree(dir: "libs", include: ["*.jar"])

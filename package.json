@@ -7,12 +7,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "jest-haste-map": "^24.5.0",
     "react": "16.6.3",
-    "react-native": "0.58.6",
+    "react-native": "^0.58.6",
+    "react-native-camera": "^2.0.1",
     "react-native-deprecated-custom-components": "^0.1.2",
     "react-native-splash-screen": "^3.2.0",
     "react-native-tab-navigator": "^0.3.4",
-    "react-native-webview": "^5.3.1"
+    "react-native-webview": "^5.3.1",
+    "tcomb-form-native": "^0.6.20"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
